@@ -1,0 +1,29 @@
+class Solution:
+    def addTwoNumbers(self, l1, l2):
+
+        def toNumber(head):
+            s = ""
+
+            while head:
+                s = str(head.val) + s
+                head = head.next
+
+            return int(s)
+
+        num1 = toNumber(l1)
+        num2 = toNumber(l2)
+
+        total = num1 + num2
+
+        if total == 0:
+            return ListNode(0)
+
+        dummy = ListNode(0)
+        temp = dummy
+
+        while total > 0:
+            temp.next = ListNode(total % 10)
+            temp = temp.next
+            total //= 10
+
+        return dummy.next

@@ -1,0 +1,10 @@
+class Solution(object):
+    def runningSum(self, nums):
+        result=[]
+        curr_total=0
+        for i in range(len(nums)):
+            curr_total=curr_total+nums[i]
+            result.append(curr_total)
+        return result
+
+        

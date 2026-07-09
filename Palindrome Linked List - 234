@@ -1,0 +1,8 @@
+
+class Solution(object):
+    def isPalindrome(self, head):
+        s=""
+        while head:
+            s=str(head.val)+s
+            head=head.next
+        return s==s[::-1]
