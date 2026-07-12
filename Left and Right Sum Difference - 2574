@@ -1,0 +1,20 @@
+class Solution(object):
+    def leftRightDifference(self, nums):
+        left_sum=[]
+        right_sum=[]
+        curr_left=0
+        curr_right=0
+        for i in range(len(nums)):
+            left_sum.append(curr_left)
+            curr_left=curr_left+nums[i]
+        for j in range(len(left_sum)-1,-1,-1):
+            right_sum.append(curr_right)
+            curr_right=curr_right+nums[j] 
+        right_sum=right_sum[::-1]
+        result=[]
+        for i in range(len(nums)):
+            result.append(abs(right_sum[i]-left_sum[i]))
+        return result
+
+        
+        
